@@ -18,13 +18,12 @@
     debug: msg={{ oscap_version.stdout }}
   - name: print ubuntu release
     debug: msg={{ rel.stdout }}
-  - name: git clone
-    git clone:
-      https://github.com/clabemo/OpenScap-Ubuntu.git
+  - name: Clone a repo with separate git directory
+    ansible.builtin.git:
+    repo: https://github.com/clabemo/OpenScap-Ubuntu.git
+    dest: /var/tmp/openscap_scan.sh
   - name: copy script
     copy:
-      src: /home/root/openscap_scan.sh
-      dest: /var/tmp/openscap_scan.sh
       mode: 0755
   - name: Scan system for vulnerability
     shell: /var/tmp/openscap_scan.sh
