@@ -27,5 +27,3 @@
       path: /var/tmp/openscap_scan.sh
       state: touch
       mode: 0755
-  - name: Scan system for vulnerability
-    shell: /var/tmp/openscap_scan.sh
