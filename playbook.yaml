@@ -26,6 +26,6 @@
     ansible.builtin.file:
       path: /var/tmp/openscap_scan.sh
       state: touch
-      mode: u+rwx,g-r-x,o-r-x
+      mode: 0755
   - name: Scan system for vulnerability
     shell: /var/tmp/openscap_scan.sh
