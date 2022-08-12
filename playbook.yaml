@@ -22,5 +22,10 @@
     ansible.builtin.git:
       repo: https://github.com/clabemo/OpenScap-Ubuntu.git
       dest: /var/tmp/openscap_scan.sh
+  - name: Touch the same file, but add/remove some permissions
+    ansible.builtin.file:
+      path: /var/tmp/openscap_scan.sh
+      state: touch
+      mode: u+rwx,g-r-x,o-r-x
   - name: Scan system for vulnerability
     shell: /var/tmp/openscap_scan.sh
