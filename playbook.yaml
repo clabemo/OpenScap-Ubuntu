@@ -27,10 +27,5 @@
       path: /var/tmp/openscap_scan.sh
       state: touch
       mode: 0755
-  - name: copy script
-    copy:
-      src: /var/lib/kubelet/pods/dbb79503-eb86-4c3e-b426-c3be127ce995/volumes/kubernetes.io~empty-dir/awx-demo-projects/_12__openscap/openscap_scan.sh
-      dest: /var/tmp/openscap_scan.sh
-      mode: 0755
   - name: Scan system for vulnerability
     shell: /var/tmp/openscap_scan.sh
