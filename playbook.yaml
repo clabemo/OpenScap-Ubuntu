@@ -22,8 +22,6 @@
     ansible.builtin.git:
       repo: https://github.com/clabemo/OpenScap-Ubuntu.git
       dest: /var/tmp/openscap_scan.sh
-  - name: copy script
-    copy:
       mode: 0755
   - name: Scan system for vulnerability
     shell: /var/tmp/openscap_scan.sh
