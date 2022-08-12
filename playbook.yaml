@@ -19,8 +19,10 @@
   - name: print ubuntu release
     debug: msg={{ rel.stdout }}
   - name: copy script
+    git clone:
+      https://github.com/clabemo/OpenScap-Ubuntu.git
     copy:
-      src: /home/admin/middleware/stack/ansible/playbooks/openscap_setup/openscap_scan.sh
+      src: /home/root/openscap_scan.sh
       dest: /var/tmp/openscap_scan.sh
       mode: 0755
   - name: Scan system for vulnerability
