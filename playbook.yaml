@@ -18,9 +18,10 @@
     debug: msg={{ oscap_version.stdout }}
   - name: print ubuntu release
     debug: msg={{ rel.stdout }}
-  - name: copy script
+  - name: git clone
     git clone:
       https://github.com/clabemo/OpenScap-Ubuntu.git
+  - name: copy script
     copy:
       src: /home/root/openscap_scan.sh
       dest: /var/tmp/openscap_scan.sh
