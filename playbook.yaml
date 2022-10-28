@@ -4,7 +4,7 @@
   become: true
   become_user: root
   tasks:
-  - name: ubuntu release name
+  - name: OS release name
     command: lsb_release -cs
     register: rel
   - name: install openscap-scanner
@@ -16,3 +16,5 @@
     register: oscap_version
   - name: print oscap version
     debug: msg={{ oscap_version.stdout }}
+  - name: print OS release
+    debug: msg={{ rel.stdout }}
