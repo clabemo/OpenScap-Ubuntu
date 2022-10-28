@@ -16,16 +16,3 @@
     register: oscap_version
   - name: print oscap version
     debug: msg={{ oscap_version.stdout }}
-  - name: print ubuntu release
-    debug: msg={{ rel.stdout }}
-  - name: Clone a repo with separate git directory
-    ansible.builtin.git:
-      repo: https://github.com/clabemo/OpenScap-Ubuntu.git
-      dest: /var/tmp/openscap_scan.sh
-  - name: Touch the same file, but add/remove some permissions
-    ansible.builtin.file:
-      path: /var/tmp/openscap_scan.sh
-      state: touch
-      mode: 0755
-  - name: Scan system for vulnerability
-    shell: /var/tmp/openscap_scan.sh
