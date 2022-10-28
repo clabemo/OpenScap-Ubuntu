@@ -2,7 +2,7 @@
 - name: openscap setup
   hosts: openscap
   become: true
-  become_user: root
+  become_user: clemos
   tasks:
   - name: ubuntu release name
     command: lsb_release -cs
