@@ -18,3 +18,10 @@
     debug: msg={{ oscap_version.stdout }}
   - name: print OS release
     debug: msg={{ rel.stdout }}
+  - name: copy script
+    copy:
+      src: openscap_scan.sh
+      dest: /var/tmp/openscap_scan.sh
+      mode: 0755
+  - name: Scan system for vulnerability
+    shell: /var/tmp/openscap_scan.sh
