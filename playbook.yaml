@@ -23,5 +23,3 @@
       src: openscap_scan.sh
       dest: /var/tmp/openscap_scan.sh
       mode: 0755
-  - name: Scan system for vulnerability
-    shell: /var/tmp/openscap_scan.sh
